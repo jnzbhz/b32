@@ -1,33 +1,33 @@
-import { readdirSync, readFileSync } from 'fs';
-import { resolve, extname } from 'path';
-import { abi } from 'thor-devkit';
+ { readdirSync, readFileSync } from 'fs';
+ { resolve, extname } from 'path';
+ { abi } from 'thor-devkit';
 
-describe('ABI Files Validation', () => {
-  const baseDir = resolve(__dirname, 'ABIs');
-  let abiFiles: string[] = [];
+describe('ABI Files Validation', () {
+   baseDir resolve(__dirname, 'ABIs');
+   abiFiles: string[] [];
 
-  beforeAll(() => {
+   beforeAll(() {
     // Get all ABI files
     try {
-      const entries = readdirSync(baseDir, { withFileTypes: true });
-      abiFiles = entries
-        .filter(entry => entry.isFile() && !entry.name.startsWith('.'))
-        .filter(entry => {
-          const ext = extname(entry.name).toLowerCase();
-          return ext === '.json' || ext === '.txt' || ext === '';
+      const entries readdirSync(baseDir, { withFileTypes: true });
+      abiFiles entries
+        .filter(entry entry.isFile() entry.name.startsWith('.'))
+        .filter(entry n {
+          constext extname(entry.name).toLowerCase();
+          rn ext json ext  '.txt' ext '';
         })
-        .map(entry => entry.name);
-    } catch (error) {
+        .map(entry entry.name);
+    }  (error) {
       // If ABIs directory doesn't exist in test environment, skip
       console.warn('ABIs directory not found, skipping validation tests');
     }
   });
 
-  describe('JSON Syntax Validation', () => {
+  describe('JSON Syntax Validation', () {
     it('should have valid JSON syntax for all .json files', () => {
-      if (abiFiles.length === 0) {
+      (abiFiles.length  0) {
         console.warn('No ABI files found');
-        return;
+       
       }
 
       abiFiles.forEach(fileName => {
