@@ -37,8 +37,19 @@
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "CheckpointUnorderedInsertion",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      }
+    ],
+    "name": "CallerIsNotTheGrantReceiver",
     "type": "error"
   },
   {
@@ -59,7 +70,71 @@
   },
   {
     "inputs": [],
+    "name": "EnforcedPause",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ExpectedPause",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "FailedInnerCall",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      }
+    ],
+    "name": "GrantAlreadyCompleted",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      }
+    ],
+    "name": "GrantAlreadyRejected",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "availableFunds",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "requiredFunds",
+        "type": "uint256"
+      }
+    ],
+    "name": "InsufficientFunds",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAmount",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "selector",
+        "type": "bytes4"
+      }
+    ],
+    "name": "InvalidFunctionSelector",
     "type": "error"
   },
   {
@@ -68,8 +143,184 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "milestoneIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "InvalidMilestoneIndex",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "provided",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "required",
+        "type": "uint256"
+      }
+    ],
+    "name": "InvalidNumberOfMilestones",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "target",
+        "type": "address"
+      }
+    ],
+    "name": "InvalidTarget",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "milestoneIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "MilestoneAlreadyApproved",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "milestoneIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "MilestoneAlreadyClaimed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "milestoneIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "MilestoneAmountZero",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "claimedAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "MilestoneClaimedAmountExceedsTotalAmount",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "MilestoneDetailsMetadataURIEmpty",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "milestoneIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "MilestoneNotApprovedByAdmin",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "MilestoneProposerZeroAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum IGrantsManager.MilestoneState",
+        "name": "status",
+        "type": "uint8"
+      }
+    ],
+    "name": "MilestoneStateNotPending",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "MilestoneTotalAmountZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotAuthorized",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "NotInitializing",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "milestoneIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "PreviousMilestoneNotApproved",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      }
+    ],
+    "name": "ProposalNotExecuted",
     "type": "error"
   },
   {
@@ -78,19 +329,8 @@
     "type": "error"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint8",
-        "name": "bits",
-        "type": "uint8"
-      },
-      {
-        "internalType": "uint256",
-        "name": "value",
-        "type": "uint256"
-      }
-    ],
-    "name": "SafeCastOverflowedUintDowncast",
+    "inputs": [],
+    "name": "TransferFailed",
     "type": "error"
   },
   {
@@ -114,43 +354,12 @@
     "inputs": [
       {
         "indexed": true,
-        "internalType": "address",
-        "name": "newAddress",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "oldAddress",
-        "type": "address"
-      }
-    ],
-    "name": "EmissionsAddressUpdated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
         "internalType": "uint256",
-        "name": "tier1",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "tier2",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "tier3",
+        "name": "proposalId",
         "type": "uint256"
       }
     ],
-    "name": "FreshnessMultipliersSet",
+    "name": "GrantCanceled",
     "type": "event"
   },
   {
@@ -159,48 +368,17 @@
       {
         "indexed": true,
         "internalType": "uint256",
-        "name": "cycle",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "level",
+        "name": "proposalId",
         "type": "uint256"
       },
       {
         "indexed": false,
-        "internalType": "uint256",
-        "name": "multiplier",
-        "type": "uint256"
-      }
-    ],
-    "name": "GMVoteRegistered",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
         "internalType": "address",
-        "name": "newAddress",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "oldAddress",
+        "name": "newGrantsReceiver",
         "type": "address"
       }
     ],
-    "name": "GalaxyMemberAddressUpdated",
+    "name": "GrantsReceiverUpdated",
     "type": "event"
   },
   {
@@ -220,19 +398,25 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "uint256",
-        "name": "forAgainst",
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "milestoneIndex",
         "type": "uint256"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "abstain",
+        "name": "amount",
         "type": "uint256"
       }
     ],
-    "name": "IntentMultipliersSet",
+    "name": "MilestoneClaimed",
     "type": "event"
   },
   {
@@ -241,17 +425,36 @@
       {
         "indexed": true,
         "internalType": "uint256",
-        "name": "level",
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "newMilestoneMetadataURI",
+        "type": "string"
+      }
+    ],
+    "name": "MilestoneMetadataURIUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "proposalId",
         "type": "uint256"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "multiplier",
+        "name": "amount",
         "type": "uint256"
       }
     ],
-    "name": "LevelToMultiplierPending",
+    "name": "MilestoneRejectedAndFundsReturnedToTreasury",
     "type": "event"
   },
   {
@@ -260,48 +463,17 @@
       {
         "indexed": true,
         "internalType": "uint256",
-        "name": "level",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "multiplier",
-        "type": "uint256"
-      }
-    ],
-    "name": "LevelToMultiplierSet",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "navigator",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "citizen",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "fee",
+        "name": "proposalId",
         "type": "uint256"
       },
       {
         "indexed": true,
         "internalType": "uint256",
-        "name": "cycle",
+        "name": "milestoneIndex",
         "type": "uint256"
       }
     ],
-    "name": "NavigatorFeeTaken",
+    "name": "MilestoneValidated",
     "type": "event"
   },
   {
@@ -309,137 +481,49 @@
     "inputs": [
       {
         "indexed": true,
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
         "internalType": "address",
-        "name": "newAddress",
+        "name": "proposer",
         "type": "address"
       },
       {
         "indexed": true,
         "internalType": "address",
-        "name": "oldAddress",
-        "type": "address"
-      }
-    ],
-    "name": "NavigatorRegistryAddressUpdated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "bool",
-        "name": "disabled",
-        "type": "bool"
-      }
-    ],
-    "name": "QuadraticRewardingToggled",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "relayer",
+        "name": "grantsReceiver",
         "type": "address"
       },
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "fee",
+        "name": "totalAmount",
         "type": "uint256"
       },
       {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "cycle",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "voter",
-        "type": "address"
+        "indexed": false,
+        "internalType": "string",
+        "name": "metadataURI",
+        "type": "string"
       }
     ],
-    "name": "RelayerFeeTaken",
+    "name": "MilestonesCreated",
     "type": "event"
   },
   {
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
+        "indexed": false,
         "internalType": "address",
-        "name": "newAddress",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "oldAddress",
+        "name": "account",
         "type": "address"
       }
     ],
-    "name": "RelayerRewardsPoolAddressUpdated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "cycle",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "voter",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "reward",
-        "type": "uint256"
-      }
-    ],
-    "name": "RewardClaimed",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "cycle",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "voter",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "reward",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "gmReward",
-        "type": "uint256"
-      }
-    ],
-    "name": "RewardClaimedV2",
+    "name": "Paused",
     "type": "event"
   },
   {
@@ -521,6 +605,19 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "Unpaused",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "implementation",
@@ -529,63 +626,6 @@
     ],
     "name": "Upgraded",
     "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "cycle",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "voter",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "votes",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "rewardWeightedVote",
-        "type": "uint256"
-      }
-    ],
-    "name": "VoteRegistered",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "newAddress",
-        "type": "address"
-      }
-    ],
-    "name": "XAllocationVotingAddressUpdated",
-    "type": "event"
-  },
-  {
-    "inputs": [],
-    "name": "CONTRACTS_ADDRESS_MANAGER_ROLE",
-    "outputs": [
-      {
-        "internalType": "bytes32",
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
   },
   {
     "inputs": [],
@@ -615,12 +655,12 @@
   },
   {
     "inputs": [],
-    "name": "MULTIPLIER_SCALE",
+    "name": "GRANTS_APPROVER_ROLE",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "bytes32",
         "name": "",
-        "type": "uint256"
+        "type": "bytes32"
       }
     ],
     "stateMutability": "view",
@@ -628,12 +668,25 @@
   },
   {
     "inputs": [],
-    "name": "SCALING_FACTOR",
+    "name": "GRANTS_REJECTOR_ROLE",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "bytes32",
         "name": "",
-        "type": "uint256"
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "PAUSER_ROLE",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
       }
     ],
     "stateMutability": "view",
@@ -666,154 +719,103 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "VOTE_REGISTRAR_ROLE",
-    "outputs": [
+    "inputs": [
       {
-        "internalType": "bytes32",
-        "name": "",
-        "type": "bytes32"
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "milestoneIndex",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "reason",
+        "type": "string"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "b3tr",
-    "outputs": [
-      {
-        "internalType": "contract IB3TR",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
+    "name": "approveMilestoneWithReason",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "cycle",
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "milestoneIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "approveMilestones",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "milestoneIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "claimMilestone",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "metadataURI",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
         "type": "uint256"
       },
       {
         "internalType": "address",
-        "name": "voter",
+        "name": "proposer",
         "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "grantsReceiver",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes[]",
+        "name": "calldatas",
+        "type": "bytes[]"
       }
     ],
-    "name": "claimReward",
+    "name": "createMilestones",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "clock",
+    "name": "getB3trContract",
     "outputs": [
-      {
-        "internalType": "uint48",
-        "name": "",
-        "type": "uint48"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "cycle",
-        "type": "uint256"
-      }
-    ],
-    "name": "cycleToTotal",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "cycle",
-        "type": "uint256"
-      }
-    ],
-    "name": "cycleToTotalGMWeight",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "cycle",
-        "type": "uint256"
-      },
       {
         "internalType": "address",
-        "name": "voter",
-        "type": "address"
-      }
-    ],
-    "name": "cycleToVoterToGMWeight",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "cycle",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "voter",
-        "type": "address"
-      }
-    ],
-    "name": "cycleToVoterToTotal",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "emissions",
-    "outputs": [
-      {
-        "internalType": "contract IEmissions",
         "name": "",
         "type": "address"
       }
@@ -823,113 +825,95 @@
   },
   {
     "inputs": [],
-    "name": "galaxyMember",
+    "name": "getGovernorContract",
     "outputs": [
-      {
-        "internalType": "contract IGalaxyMember",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "timepoint",
-        "type": "uint256"
-      }
-    ],
-    "name": "getFreshnessMultipliers",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "tier1",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "tier2",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "tier3",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "cycle",
-        "type": "uint256"
-      },
       {
         "internalType": "address",
-        "name": "voter",
+        "name": "",
         "type": "address"
       }
     ],
-    "name": "getGMReward",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "timepoint",
-        "type": "uint256"
-      }
-    ],
-    "name": "getIntentMultipliers",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "forAgainst",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "abstain",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      },
       {
         "internalType": "uint256",
         "name": "proposalId",
         "type": "uint256"
       }
     ],
-    "name": "getMultiplier",
+    "name": "getGrantProposal",
     "outputs": [
       {
-        "internalType": "uint256",
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "claimedAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "proposer",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "grantsReceiver",
+            "type": "address"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isClaimed",
+                "type": "bool"
+              },
+              {
+                "internalType": "bool",
+                "name": "isApproved",
+                "type": "bool"
+              },
+              {
+                "internalType": "bool",
+                "name": "isRejected",
+                "type": "bool"
+              },
+              {
+                "internalType": "string",
+                "name": "reason",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct IGrantsManager.Milestone[]",
+            "name": "milestones",
+            "type": "tuple[]"
+          },
+          {
+            "internalType": "string",
+            "name": "metadataURI",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct IGrantsManager.GrantProposal",
         "name": "",
-        "type": "uint256"
+        "type": "tuple"
       }
     ],
     "stateMutability": "view",
@@ -939,21 +923,16 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "cycle",
+        "name": "proposalId",
         "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "voter",
-        "type": "address"
       }
     ],
-    "name": "getNavigatorFee",
+    "name": "getGrantsReceiverAddress",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "address",
         "name": "",
-        "type": "uint256"
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -963,21 +942,48 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "cycle",
+        "name": "proposalId",
         "type": "uint256"
       },
       {
-        "internalType": "address",
-        "name": "voter",
-        "type": "address"
+        "internalType": "uint256",
+        "name": "milestoneIndex",
+        "type": "uint256"
       }
     ],
-    "name": "getRelayerFee",
+    "name": "getMilestone",
     "outputs": [
       {
-        "internalType": "uint256",
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isClaimed",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "isApproved",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "isRejected",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "reason",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct IGrantsManager.Milestone",
         "name": "",
-        "type": "uint256"
+        "type": "tuple"
       }
     ],
     "stateMutability": "view",
@@ -987,16 +993,70 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "cycle",
+        "name": "proposalId",
         "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "voter",
-        "type": "address"
       }
     ],
-    "name": "getReward",
+    "name": "getMilestoneMetadataURI",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getMilestones",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isClaimed",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "isApproved",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "isRejected",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "reason",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct IGrantsManager.Milestone[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getMinimumMilestoneCount",
     "outputs": [
       {
         "internalType": "uint256",
@@ -1029,6 +1089,38 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "milestoneId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getTotalAmountForMilestones",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getTreasuryContract",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "bytes32",
         "name": "role",
         "type": "bytes32"
@@ -1048,21 +1140,16 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "nodeId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
         "name": "proposalId",
         "type": "uint256"
       }
     ],
-    "name": "hasNodeVoted",
+    "name": "grantState",
     "outputs": [
       {
-        "internalType": "bool",
+        "internalType": "enum IGrantsManager.GrantState",
         "name": "",
-        "type": "bool"
+        "type": "uint8"
       }
     ],
     "stateMutability": "view",
@@ -1095,52 +1182,18 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "proposalId",
-        "type": "uint256"
-      }
-    ],
-    "name": "hasTokenVoted",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "address",
-        "name": "admin",
+        "name": "_governor",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "upgrader",
+        "name": "_treasury",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "contractsAddressManager",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_emissions",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_galaxyMember",
+        "name": "defaultAdmin",
         "type": "address"
       },
       {
@@ -1149,14 +1202,9 @@
         "type": "address"
       },
       {
-        "internalType": "uint256[]",
-        "name": "levels",
-        "type": "uint256[]"
-      },
-      {
-        "internalType": "uint256[]",
-        "name": "multipliers",
-        "type": "uint256[]"
+        "internalType": "uint256",
+        "name": "_minimumMilestoneCount",
+        "type": "uint256"
       }
     ],
     "name": "initialize",
@@ -1167,104 +1215,17 @@
   {
     "inputs": [
       {
-        "internalType": "uint256[]",
-        "name": "levels",
-        "type": "uint256[]"
-      },
-      {
-        "internalType": "uint256[]",
-        "name": "multipliers",
-        "type": "uint256[]"
-      }
-    ],
-    "name": "initializeV5",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "contract IXAllocationVotingGovernor",
-        "name": "_xAllocationVoting",
-        "type": "address"
-      },
-      {
-        "internalType": "contract IRelayerRewardsPool",
-        "name": "_relayerRewardsPool",
-        "type": "address"
-      }
-    ],
-    "name": "initializeV6",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint48",
-        "name": "roundStartTimepoint",
-        "type": "uint48"
-      },
-      {
         "internalType": "uint256",
-        "name": "freshnessT1",
+        "name": "proposalId",
         "type": "uint256"
       },
       {
         "internalType": "uint256",
-        "name": "freshnessT2",
+        "name": "milestoneIndex",
         "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "freshnessT3",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "intentFA",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "intentAb",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "_navigatorRegistry",
-        "type": "address"
       }
     ],
-    "name": "initializeV7",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint48",
-        "name": "blockNumber",
-        "type": "uint48"
-      }
-    ],
-    "name": "isQuadraticRewardingDisabledAtBlock",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "isQuadraticRewardingDisabledForCurrentCycle",
+    "name": "isClaimable",
     "outputs": [
       {
         "internalType": "bool",
@@ -1279,16 +1240,78 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "level",
+        "name": "proposalId",
         "type": "uint256"
       }
     ],
-    "name": "levelToMultiplier",
+    "name": "isGrantCompleted",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "bool",
         "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
         "type": "uint256"
+      }
+    ],
+    "name": "isGrantInDevelopment",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      }
+    ],
+    "name": "isGrantRejected",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "milestoneIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "milestoneState",
+    "outputs": [
+      {
+        "internalType": "enum IGrantsManager.MilestoneState",
+        "name": "",
+        "type": "uint8"
       }
     ],
     "stateMutability": "view",
@@ -1296,12 +1319,19 @@
   },
   {
     "inputs": [],
-    "name": "navigatorRegistry",
+    "name": "pause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "paused",
     "outputs": [
       {
-        "internalType": "contract INavigatorRegistry",
+        "internalType": "bool",
         "name": "",
-        "type": "address"
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
@@ -1326,39 +1356,11 @@
         "internalType": "uint256",
         "name": "proposalId",
         "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "voter",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "votes",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "votePower",
-        "type": "uint256"
       }
     ],
-    "name": "registerVote",
+    "name": "rejectMilestones",
     "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "relayerRewardsPool",
-    "outputs": [
-      {
-        "internalType": "contract IRelayerRewardsPool",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -1401,34 +1403,11 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_emissions",
+        "name": "_b3tr",
         "type": "address"
       }
     ],
-    "name": "setEmissions",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "tier1",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "tier2",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "tier3",
-        "type": "uint256"
-      }
-    ],
-    "name": "setFreshnessMultipliers",
+    "name": "setB3trContract",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1437,11 +1416,11 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_galaxyMember",
+        "name": "_governor",
         "type": "address"
       }
     ],
-    "name": "setGalaxyMember",
+    "name": "setGovernorContract",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1450,52 +1429,11 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "forAgainst",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "abstain",
+        "name": "minimumMilestoneCount",
         "type": "uint256"
       }
     ],
-    "name": "setIntentMultipliers",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "level",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "multiplier",
-        "type": "uint256"
-      }
-    ],
-    "name": "setLevelToMultiplier",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "level",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "multiplier",
-        "type": "uint256"
-      }
-    ],
-    "name": "setLevelToMultiplierNow",
+    "name": "setMinimumMilestoneCount",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1504,37 +1442,11 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_navigatorRegistry",
+        "name": "_treasury",
         "type": "address"
       }
     ],
-    "name": "setNavigatorRegistry",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_relayerRewardsPool",
-        "type": "address"
-      }
-    ],
-    "name": "setRelayerRewardsPool",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_xAllocationVoting",
-        "type": "address"
-      }
-    ],
-    "name": "setXAllocationVoting",
+    "name": "setTreasuryContract",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1560,7 +1472,43 @@
   },
   {
     "inputs": [],
-    "name": "toggleQuadraticRewarding",
+    "name": "unpause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "newGrantsReceiver",
+        "type": "address"
+      }
+    ],
+    "name": "updateGrantsReceiver",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "proposalId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "newMilestoneMetadataURI",
+        "type": "string"
+      }
+    ],
+    "name": "updateMilestoneMetadataURI",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1588,25 +1536,12 @@
     "name": "version",
     "outputs": [
       {
-        "internalType": "string",
+        "internalType": "uint256",
         "name": "",
-        "type": "string"
+        "type": "uint256"
       }
     ],
     "stateMutability": "pure",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "xAllocationVoting",
-    "outputs": [
-      {
-        "internalType": "contract IXAllocationVotingGovernor",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
     "type": "function"
   }
 ]
